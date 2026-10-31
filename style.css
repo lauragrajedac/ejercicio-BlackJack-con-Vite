@@ -1,25 +1,149 @@
-
-html, body {
-  margin: 0px;
-  background-color: aquamarine;
-  color: blue;
+:root {
+  --bg-primary: #0a1f1c;
+  --bg-secondary: #132a26;
+  --accent-gold: #d4af37;
+  --text-main: #f8fafc;
+  --card-bg: rgba(255, 255, 255, 0.05);
 }
 
-.titulo{
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra todo horizontalmente */
+  justify-content: flex-start;
+}
+
+header {
+  background-color: #061311;
+  border-bottom: 2px solid var(--accent-gold);
+  padding: 1rem 2rem;
   text-align: center;
-  background-color: rgb(236, 29, 219);
-  color: pink;
-  padding: 20px;
-  font-size: 10px;
-}
-.carta{
-  position: relative;
-  width: 100px;
-  left: 100px;
-  margin-left: -75px;
-
+  width: 100%;
 }
 
-#computadora-cartas,#jugador-cartas{
-  height: 160px;
+.tablero {
+  max-width: 900px;
+  margin: 2rem auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra las cajas de los jugadores */
+  gap: 2rem;
+}
+
+.jugador-contenedor {
+  background: var(--card-bg);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(5px);
+  width: 100%;
+  text-align: center; /* Centra los textos de puntos */
+}
+
+.divCartas {
+  display: flex;
+  justify-content: center; /* Centra las cartas horizontalmente */
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+h1 {
+  margin: 0;
+  color: var(--accent-gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+button {
+  background: var(--bg-secondary);
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: var(--accent-gold);
+  color: #000;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+}
+
+.tablero {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.jugador-contenedor {
+  background: var(--card-bg);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(5px);
+}
+
+.divCarta img {
+  width: 110px;
+  margin-right: -40px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: transform 0.2s;
+}
+
+.divCarta img:hover {
+  transform: translateY(-10px);
+}
+
+/* Modal personalizado */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: var(--bg-secondary);
+  border: 2px solid var(--accent-gold);
+  padding: 2.5rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal-content h2 {
+  color: var(--accent-gold);
+  margin-top: 0;
 }
